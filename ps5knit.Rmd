@@ -3,8 +3,8 @@ title: "ps5"
 author: "Alex Han"
 date: "2023-02-18"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 editor_options:
   markdown:
     wrap: 72
@@ -104,7 +104,7 @@ df %>%
   summarise(maximum_year = max(time), minimum_year = min(time))
 ```
 
-The maximum year in this dataset is 2019 and the minimum year is 1960.
+The maximum year in this data set is 2019 and the minimum year is 1960.
 
 ### 3 CO2 emissions (30pt)
 
@@ -140,16 +140,16 @@ df %>%
     labs(title = "Total CO2 Emissions Over Time", x = "Year", y = "Total CO2 Emissions", color = "Country")
 ```
 
-It appears to me that China had a exponential growth in CO2 emissions in
-the early 2000's, this might due to its rapid economic reforms in the
-late 90's. The US is also showing a slow decline in CO2 emissions in
-recent years due to the mass replacement of coal power with solar,
-electric and other forms of green energy. India is also steadily
-climbing in total CO2 emissions as it is a fast developing nation. The
-other countries I've chosen: Austria, Australia and Germany are all
-pioneers in green energy and it's absolutely no surprise that they
-produce substantially less CO2 emissions compared to China, the US, and
-India.
+It appears to me that China had a **exponential growth** in CO2
+emissions in the *early 2000'*, this might due to its **rapid economic
+reforms** in the late 90's. The US is also showing a slow decline in CO2
+emissions in recent years due to the *mass replacement* of *coal power*
+with *solar*, *electric* and *other forms of green energy*. India is
+also steadily climbing in total CO2 emissions as it is a *fast
+developing* nation. The other countries I've chosen: Austria, Australia
+and Germany are all pioneers in green energy and it's absolutely no
+surprise that they produce substantially less CO2 emissions compared to
+China, the US, and India.
 
 3\. (5pt) Now let's analyze the CO2 emissions per capita (co2_PC ). Make
 a similar plot of the\
@@ -172,10 +172,10 @@ the most developed and industrialized nations of the world also situates
 itself on the top of the chart. Germany and Austria while also developed
 find themselves sitting in between Australia and China. The two still
 developing countries of China and India have the lowest CO2 emission per
-capita. This suggests that rapidly developing countries such as China
-and India have much lower CO2 emissions per capita compared to the
-developed nations. However, their total CO2 emissions are propelled
-higher than the developed nations to due their enormous population.
+capita. This suggests that **rapidly developing** countries such as
+China and India have much lower CO2 emissions per capita compared to the
+developed nations. However, their total CO2 emissions are *propelled
+higher* than the developed nations to due their **enormous population**.
 
 4\. (6pt) Compute average CO2 emissions per capita across the continents
 (assume region is the\
@@ -193,9 +193,9 @@ df %>%
    print()
 ```
 
-This shows that continents with more developing nations would produce
-less CO2 per capita even if their population is much higher than that of
-a continent with more developed nations.
+This shows that continents with more *developing nations* would produce
+less CO2 per capita even if their population is much **higher** than
+that of a continent with more *developed nations*.
 
 5\. (7pt) Make a barplot where you show the previous results--average
 CO2 emissions per capita\
@@ -217,14 +217,14 @@ df %>%
        fill = "Year")
 ```
 
-This shows that the average CO2 per capita has actually dropped for the
-Americas. Personally, I believe this to be the effect of the US
-switching over to green energy in the span of the period from 1960 to
-2016. However, other continents have also increased in average CO2
-emission per capita as the two developing powerhouses of Asia--- China
-and India are fully dedicated to the path of becoming world economical
-powers. Increasing Asia's average CO2 per capita by a massive amount
-from 1960 to 2016.
+This shows that the average CO2 per capita has actually **dropped** for
+the Americas. Personally, I believe this to be the effect of the US
+switching over to *green energy* in the span of the period from 1960 to
+2016. However, other continents have also **increased** in average CO2
+emission per capita as the two developing *powerhouses* of Asia---
+*China* and *India* are fully dedicated to the path of becoming world
+economical powers. Increasing Asia's average CO2 per capita by a massive
+amount from 1960 to 2016.
 
 6\. Which countries are the three largest, and three smallest CO2
 emitters (in terms of CO2 per\
@@ -417,9 +417,9 @@ hcolors <- c("skyblue1", "sienna1")
 
 df %>% 
   filter(time == "1960" | time == "2019") %>% 
+  filter(!is.na(GDP_PC)) %>% 
   ggplot(aes(x = GDP_PC, fill = as.factor(time)))+
-  geom_histogram(binwidth = 2300, position = position_dodge(width = 0.8)) +
-  facet_wrap(~ time) +
+  geom_histogram(binwidth = 1600, position = "dodge") +
   scale_fill_manual(values = hcolors) +
   labs(title = "GDP per capita for years of 1960 and 2019", x = "GDP per Capita", fill = "Years")+
   theme_dark()
@@ -428,7 +428,7 @@ df %>%
 
 From the histograms, we can observe that more countries are joining the
 higher end of GDP per capita in in 2019. Overall, *almost all countries*
-have *shifted* over bin width to the *right* in the span of 60 years.
+have *shifted* over one bin to the *right* in the span of 60 years.
 
 7\. (6pt) What was the ranking of US in terms of life expectancy in 1960
 and in 2019? (When\
@@ -493,5 +493,5 @@ significantly in terms of life expectancy over the course of 60 years.
 In 1960, the US was in the 90th percentile in terms of life expectancy.
 However in 2019, the US is now in the 77th percentile.
 
-**Finally** tell us how many hours did you spend on this PS. Around 7
+**Finally** tell us how many hours did you spend on this PS. Around 17
 hours
