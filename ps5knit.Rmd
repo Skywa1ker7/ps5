@@ -222,9 +222,9 @@ the Americas. Personally, I believe this to be the effect of the US
 switching over to *green energy* in the span of the period from 1960 to
 2016. However, other continents have also **increased** in average CO2
 emission per capita as the two developing *powerhouses* of Asia---
-*China* and *India* are fully dedicated to the path of becoming world
-economical powers. Increasing Asia's average CO2 per capita by a massive
-amount from 1960 to 2016.
+*China* and *India* are fully dedicated to the path of becoming **world
+economical powers**. Increasing Asia's average CO2 per capita by a
+massive amount from 1960 to 2016.
 
 6\. Which countries are the three largest, and three smallest CO2
 emitters (in terms of CO2 per\
@@ -278,6 +278,26 @@ df %>%
    arrange(rank)  
 ```
 
+The three largest countries in terms of CO2 emissions in the Americas
+are: Aruba, Argentina, Antigua and Barbuda. The smallest three are :
+Venezuela, Virgin Island(Britain), Virgin Island(U.S.)
+
+The three largest countries in terms of CO2 emissions in Asia are:
+Afghanistan, UAE, Armenia. The smallest are: Uzbekistan, Viet Nam,
+Yemen.
+
+The three largest countries in terms of CO2 emissions in Europe are:
+Albania, Andorra, Austria. The smallest are Slovenia, Sweden and
+Ukraine.
+
+The three largest countries in terms of CO2 emissions in Africa are:
+Angola, Burundi, and Benin. The three smallest are : South Africa,
+Zambia, Zimbabwe,
+
+The three largest countries in terms of CO2 emissions in Oceania are:
+America Samoa, Australia and Fiji. The three smallest are: Tuvalu,
+Vanuatu, and Samoa.
+
 ## 4 GDP per capita (50pt)
 
 *Let's look at GDP per capita (GDP_PC ).*\
@@ -295,6 +315,7 @@ df %>%
   filter(time == "1960") %>% 
   filter(!is.na(region)) %>% 
   filter(!is.na(GDP_PC)) %>% 
+  filter(!is.na(lifeExpectancy)) %>% 
   ggplot(aes(x = GDP_PC, y = lifeExpectancy)) +
   geom_point(aes(size = totalPopulation, color = region), alpha = 0.77) +
   scale_size(range = c(3, 16)) +
@@ -325,6 +346,7 @@ df %>%
   filter(time == "2019") %>% 
   filter(!is.na(region)) %>% 
   filter(!is.na(GDP_PC)) %>% 
+  filter(!is.na(lifeExpectancy)) %>% 
   ggplot(aes(x = GDP_PC, y = lifeExpectancy)) +
   geom_point(aes(size = totalPopulation, color = region), alpha = 0.77) +
   scale_size(range = c(3, 16)) +
@@ -393,7 +415,7 @@ edu/otoomet/info201-book/dplyr.html#dplyr-helpers-compute.\
 ```{r}
 df %>% 
    filter(!is.na(lifeExpectancy)) %>%
-   filter(time == "1960"| time == "2019" ) %>% 
+   filter(time == "1960"| time == "2019" ) %>%
    filter(!is.na(region)) %>% 
    group_by(region, time) %>%
    summarise(avgle = mean(lifeExpectancy)) %>%
@@ -404,9 +426,7 @@ df %>%
 
 From the output, one can observe that all continents have shown
 improvements in life expectancy with the Asia and Africa demonstrating
-the most substantial
-
-improvements.
+the most substantial improvements.
 
 6\. (6pt) Show the histogram of GDP per capita for years of 1960 and
 2019. Try to put both\
@@ -493,5 +513,6 @@ significantly in terms of life expectancy over the course of 60 years.
 In 1960, the US was in the 90th percentile in terms of life expectancy.
 However in 2019, the US is now in the 77th percentile.
 
-**Finally** tell us how many hours did you spend on this PS. Around 17
-hours
+**Finally** tell us how many hours did you spend on this PS.
+
+**10 hours\<**
