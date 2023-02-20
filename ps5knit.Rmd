@@ -421,7 +421,7 @@ df %>%
   geom_histogram(binwidth = 2300, position = position_dodge(width = 0.8)) +
   facet_wrap(~ time) +
   scale_fill_manual(values = hcolors) +
-  labs(title = "histo", x = "GDP per Capita", fill = "Years")+
+  labs(title = "GDP per capita for years of 1960 and 2019", x = "GDP per Capita", fill = "Years")+
   theme_dark()
 
 ```
