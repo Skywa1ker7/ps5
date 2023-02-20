@@ -10,7 +10,7 @@ editor_options:
     wrap: 72
 ---
 
-# INFO201 Problem Set: rmarkdown and plotting library(tidyverse)
+# INFO201 Problem Set: rmarkdown and plotting 
 
 ## **1 Load and check data (5pt)**
 
